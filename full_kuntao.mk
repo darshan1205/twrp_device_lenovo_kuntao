@@ -14,5 +14,20 @@
 # limitations under the License.
 #
 
-add_lunch_combo omni_land-userdebug
-add_lunch_combo omni_land-eng
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
+# Encryption
+PRODUCT_PACKAGES += \
+    libcryptfs_hw
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := kuntao
+PRODUCT_NAME := full_kuntao
+PRODUCT_BRAND := Lenovo
+PRODUCT_MODEL := Lenovo P2a42
+PRODUCT_MANUFACTURER := LENOVO
